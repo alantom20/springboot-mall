@@ -1,4 +1,4 @@
-package com.chenhao.springbootmall.dta;
+package com.chenhao.springbootmall.dto;
 
 import com.chenhao.springbootmall.constant.ProductCategory;
 import jakarta.validation.constraints.NotNull;

@@ -1,8 +1,7 @@
 package com.chenhao.springbootmall.dao;
 
-import com.chenhao.springbootmall.constant.ProductCategory;
-import com.chenhao.springbootmall.dta.ProductQueryParams;
-import com.chenhao.springbootmall.dta.ProductRequest;
+import com.chenhao.springbootmall.dto.ProductQueryParams;
+import com.chenhao.springbootmall.dto.ProductRequest;
 import com.chenhao.springbootmall.model.Product;
 
 import java.util.List;

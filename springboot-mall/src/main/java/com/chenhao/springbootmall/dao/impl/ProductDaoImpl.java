@@ -1,9 +1,8 @@
 package com.chenhao.springbootmall.dao.impl;
 
-import com.chenhao.springbootmall.constant.ProductCategory;
 import com.chenhao.springbootmall.dao.ProductDao;
-import com.chenhao.springbootmall.dta.ProductQueryParams;
-import com.chenhao.springbootmall.dta.ProductRequest;
+import com.chenhao.springbootmall.dto.ProductQueryParams;
+import com.chenhao.springbootmall.dto.ProductRequest;
 import com.chenhao.springbootmall.model.Product;
 import com.chenhao.springbootmall.rowmapper.ProductRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
