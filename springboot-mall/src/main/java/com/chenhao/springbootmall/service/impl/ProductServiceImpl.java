@@ -15,7 +15,6 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     ProductDao productDao;
 
-
     @Override
     public Integer countProduct(ProductQueryParams productQueryParams) {
         return productDao.countProduct(productQueryParams);
@@ -33,6 +32,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Integer createProduct(ProductRequest productRequest) {
+
         return productDao.createProduct(productRequest);
     }
 
