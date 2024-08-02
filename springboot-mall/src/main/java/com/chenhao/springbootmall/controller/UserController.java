@@ -1,5 +1,6 @@
 package com.chenhao.springbootmall.controller;
 
+import com.chenhao.springbootmall.dto.UserLoginRequest;
 import com.chenhao.springbootmall.dto.UserRegisterRequest;
 import com.chenhao.springbootmall.model.User;
 import com.chenhao.springbootmall.service.UserService;
@@ -27,5 +28,12 @@ public class UserController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
 
+    }
+
+    @PostMapping("/users/login")
+    public ResponseEntity<User> login(@RequestBody @Valid UserLoginRequest userLoginRequest) {
+        User user = userService.login(userLoginRequest);
+
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 }
