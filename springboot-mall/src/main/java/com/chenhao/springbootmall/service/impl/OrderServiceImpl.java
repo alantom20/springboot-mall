@@ -4,6 +4,7 @@ import com.chenhao.springbootmall.dao.OrderDao;
 import com.chenhao.springbootmall.dao.ProductDao;
 import com.chenhao.springbootmall.dto.BuyItem;
 import com.chenhao.springbootmall.dto.CreateOrderRequest;
+import com.chenhao.springbootmall.model.Order;
 import com.chenhao.springbootmall.model.OrderItem;
 import com.chenhao.springbootmall.model.Product;
 import com.chenhao.springbootmall.service.OrderService;
@@ -22,12 +23,23 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private ProductDao productDao;
 
+
+    @Override
+    public Order getOrderById(Integer orderId) {
+        Order order = orderDao.getOrderById(orderId);
+
+        List<OrderItem> orderItemList = orderDao.getOrderItemByOrderId(orderId);
+        order.setOrderItemList(orderItemList);
+
+        return order;
+    }
+
     @Override
     public Integer createOrder(Integer userId, CreateOrderRequest createOrderRequest) {
         int totalAmount = 0;
         List<OrderItem> orderItemList = new ArrayList<>();
 
-        for(BuyItem buyItem: createOrderRequest.getBuyItems()){
+        for(BuyItem buyItem: createOrderRequest.getBuyItemList()){
             Product product = productDao.getProductById(buyItem.getProductId());
 
             //計算商品價錢

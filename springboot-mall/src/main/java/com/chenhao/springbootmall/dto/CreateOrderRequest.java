@@ -8,13 +8,13 @@ import java.util.List;
 public class CreateOrderRequest {
 
     @NotEmpty
-    List<BuyItem> buyItems;
+    List<BuyItem> buyItemList;
 
-    public List<BuyItem> getBuyItems() {
-        return buyItems;
+    public List<BuyItem> getBuyItemList() {
+        return buyItemList;
     }
 
-    public void setBuyItems(List<BuyItem> buyItems) {
-        this.buyItems = buyItems;
+    public void setBuyItemsList(List<BuyItem> buyItemList) {
+        this.buyItemList = buyItemList;
     }
 }
